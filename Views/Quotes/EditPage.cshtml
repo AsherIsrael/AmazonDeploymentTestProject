@@ -1,0 +1,9 @@
+<div>
+    <form action="/edit/@ViewBag.QuoteId" method="POST">
+        <div class="input-group">
+            <label for="QuoteContent">New Quote</label>
+            <textarea name="QuoteContent" cols="30" rows="10">@ViewBag.OldContent</textarea>
+        </div>
+        <button type="submit">Submit edit?</button>
+    </form>
+</div>

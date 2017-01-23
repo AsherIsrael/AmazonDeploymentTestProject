@@ -1,0 +1,16 @@
+<div>
+    <h1>Here are the awesome quotes!</h1>
+    @{
+        foreach(var quote in ViewBag.Quotes)
+        {
+            <p>"@quote.QuoteContent"</p>
+            <p class="indent">-@quote.Quoter.FirstName at @quote.CreatedAt.ToString("hh:mm MMMM dd, yyyy")</p>
+            @if(ViewBag.CurrUserId == quote.Quoter.UserId)
+            {
+                <a href="editquote/@quote.QuoteId"><button type="button">Edit</button></a>
+                <a href="deletequote/@quote.QuoteId"><button type="button">Delete your quote?</button></a>
+            }
+            <hr/>
+        }
+    }
+</div>
